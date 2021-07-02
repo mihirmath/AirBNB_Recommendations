@@ -1,0 +1,62 @@
+server_uri: bolt://localhost:7687/
+admin_user: neo4j
+admin_pass: test
+
+files:
+
+  # room
+  - url: tomslee_airbnb_asheville_0552_2016-09-10.csv
+    compression: none
+    skip_file: false
+    cql: |
+      WITH $dict.rows as rows UNWIND rows as row
+        MERGE (r:Room {id:row.room_id})
+          SET r.accommodates=row.accommodates,
+              r.bedrooms=row.bedrooms,
+              r.minstay=row.minstay,
+              r.price=row.price
+        MERGE (r)-[:HAS_SURVEY]->(s:Survey {date:date(split(row.last_modified, ' ')[0])})
+        SET s.reviews=row.reviews,
+            s.rating=row.overall_satisfaction
+        MERGE (c:Coordinates {location:Point({latitude: toFloat(row.latitude),longitude: toFloat(row.longitude)})})
+        MERGE (r)-[:HAS_LOCATION]->(c)
+        MERGE (h:Host {id:row.host_id})
+        MERGE (h)-[:HAS_ROOM]->(r)
+        MERGE (t:Type {id:row.room_type})
+        MERGE (r)-[:HAS_TYPE]->(t)
+        WITH row, r
+        WHERE exists(row.neighborhood) AND row.neighborhood <> ''
+          MERGE (n:Neighborhood {id:row.neighborhood})
+          MERGE (r)-[:BELONGS_TO]->(n)
+        FOREACH (ignore in CASE WHEN exists(row.borough) AND row.borough <> '' THEN [1] ELSE [] END |
+          MERGE (b:Borough {id:row.borough})
+          MERGE (n)-[:BELONGS_TO]->(b)
+          )
+
+pre_ingest:
+  - CREATE INDEX IF NOT EXISTS FOR (n:Room) ON (n.id)
+  - CREATE INDEX IF NOT EXISTS FOR (n:Host) ON (n.id)
+  - CREATE INDEX IF NOT EXISTS FOR (n:Type) ON (n.id)
+  - CREATE INDEX IF NOT EXISTS FOR (n:Neighborhood) ON (n.id)
+  - CREATE INDEX IF NOT EXISTS FOR (n:Borough) ON (n.id)
+  - CREATE INDEX IF NOT EXISTS FOR (n:Coordinates) ON (n.location)
+#post_ingest:
+#  # Create NEXT relationship between encounters of a patient
+#  - |
+#    CALL apoc.periodic.iterate(
+#    'MATCH (p:Patient) RETURN p',
+#    'MATCH (p)-[:HAS_ENCOUNTER]->(e)
+#    WITH e
+#    ORDER BY e.date
+#    WITH collect(e) AS encounters
+#    WITH encounters, encounters[1..] as nextEncounters
+#    UNWIND range(0,size(nextEncounters)-1,1) as index
+#    WITH encounters[index] as first, nextEncounters[index] as second
+#    CREATE (first)-[:NEXT]->(second)',{iterateList:false});
+#  # Pre-compute patient counts for each Condition
+#  - |
+#    CALL apoc.periodic.iterate('MATCH (c:Condition) RETURN c',
+#      'MATCH (c)<-[:HAS_CONDITION]-(:Encounter)<-[:HAS_ENCOUNTER]-(p:Patient)
+#      WITH c,count(p) AS NUM
+#      SET c.num=NUM', {}
+#      );
