@@ -1,0 +1,348 @@
+airport,iataCode,location,country
+Hartsfield–Jackson Atlanta International Airport,ATL/KATL,"Atlanta, Georgia",United States
+Beijing Capital International Airport,PEK/ZBAA,"Chaoyang-Shunyi, Beijing",China
+Dubai International Airport,DXB/OMDB,"Garhoud, Dubai",United Arab Emirates
+Los Angeles International Airport,LAX/KLAX,"Los Angeles, California",United States
+Tokyo International Airport,HND/RJTT,"Ota, Tokyo",Japan
+O'Hare International Airport,ORD/KORD,"Chicago, Illinois",United States
+Heathrow Airport,LHR/EGLL,"Hillingdon, London",United Kingdom
+Hong Kong International Airport,HKG/VHHH,"Chek Lap Kok, Hong Kong",China
+Shanghai Pudong International Airport,PVG/ZSPD,"Pudong, Shanghai",China
+Charles de Gaulle Airport,CDG/LFPG,"Paris (Roissy-en-France), Île-de-France",France
+Dallas/Fort Worth International Airport,DFW/KDFW,"Dallas-Fort Worth, Texas",United States
+Amsterdam Airport Schiphol,AMS/EHAM,"Haarlemmermeer, North Holland",The Netherlands
+Frankfurt Airport,FRA/EDDF,"Frankfurt, Hesse",Germany
+Istanbul Atatürk Airport,IST/LTBA,"Yesilköy, Istanbul",Turkey
+Guangzhou Baiyun International Airport,CAN/ZGGG,"Baiyun-Huadu, Guangzhou, Guangdong",China
+John F. Kennedy International Airport,JFK/KJFK,"Queens, New York City, New York",United States
+Singapore Changi Airport,SIN/WSSS,"Changi, Singapore",Singapore
+Denver International Airport,DEN/KDEN,"Denver, Colorado",United States
+Seoul Incheon International Airport,ICN/RKSI,Incheon,Republic of Korea
+Suvarnabhumi Airport,BKK/VTBS,"Bang Phli, Samut Prakan",Thailand
+Indira Gandhi International Airport,DEL/VIDP,Delhi,India
+Soekarno–Hatta International Airport,CGK/WIII,"Benda, Tangerang, Banten",Indonesia
+San Francisco International Airport,SFO/KSFO,"San Francisco, California",United States
+Kuala Lumpur International Airport,KUL/WMKK,"Sepang, Selangor",Malaysia
+Madrid Barajas Airport,MAD/LEMD,"Barajas, Madrid",Spain
+McCarran International Airport,LAS/KLAS,"Las Vegas, Nevada",United States
+Chengdu Shuangliu International Airport,CTU/ZUUU,"Shuangliu-Wuhou, Chengdu, Sichuan",China
+Seattle-Tacoma International Airport,SEA/KSEA,"SeaTac, Washington",United States
+Chhatrapati Shivaji International Airport,BOM/VABB,"Mumbai, Maharashtra",India
+Miami International Airport,MIA/KMIA,"Miami-Dade County, Florida",United States
+Charlotte Douglas International Airport,CLT/KCLT,"Charlotte, North Carolina",United States
+Toronto Pearson International Airport,YYZ/CYYZ,"Mississauga, Ontario",Canada
+Barcelona–El Prat Airport,BCN/LEBL,"El Prat, Catalonia",Spain
+Phoenix Sky Harbor International Airport,PHX/KPHX,"Phoenix, Arizona",United States
+Gatwick Airport,LGW/EGKK,"Crawley, West Sussex",United Kingdom
+Taiwan Taoyuan International Airport,TPE/RCTP,"Dayuan, Taoyuan",Taiwan
+Munich Airport,MUC/EDDM,"Freising, Bavaria",Germany
+Sydney Kingsford-Smith Airport,SYD/YSSY,"Mascot, Sydney, New South Wales",Australia
+Kunming Changshui International Airport,KMG/ZPPP,"Guandu, Kunming, Yunnan",China
+Orlando International Airport,MCO/KMCO,"Orlando, Florida",United States
+Leonardo da Vinci–Fiumicino Airport,FCO/LIRF,"Fiumicino, Lazio",Italy
+George Bush Intercontinental Airport,IAH/KIAH,"Houston, Texas",United States
+Benito Juárez International Airport,MEX/MMMX,"Venustiano Carranza, Mexico City",Mexico
+Shanghai Hongqiao International Airport,SHA/ZSSS,"Changning-Minhang, Shanghai",China
+Newark Liberty International Airport,EWR/KEWR,"Newark, New Jersey",United States
+Ninoy Aquino International Airport,MNL/RPLL,"Pasay/Parañaque, Metro Manila",Philippines
+Narita International Airport,NRT/RJAA,"Narita, Chiba",Japan
+Minneapolis/St Paul International Airport,MSP/KMSP,"St. Paul, Minnesota",United States
+Hamad International Airport,DOH/OTHH,Doha,Qatar
+Hartsfield–Jackson Atlanta International Airport,ATL/KATL,"Atlanta, Georgia",United States
+Beijing Capital International Airport,PEK/ZBAA,"Chaoyang-Shunyi, Beijing",China
+Dubai International Airport,DXB/OMDB,"Garhoud, Dubai",United Arab Emirates
+O'Hare International Airport,ORD/KORD,"Chicago, Illinois",United States
+Tokyo Haneda Airport,HND/RJTT,"Ota, Tokyo",Japan
+London Heathrow Airport,LHR/EGLL,"Hillingdon, London",United Kingdom
+Los Angeles International Airport,LAX/KLAX,"Los Angeles, California",United States
+Hong Kong International Airport,HKG/VHHH,"Chek Lap Kok, Hong Kong",China
+Paris-Charles de Gaulle Airport,CDG/LFPG,"Roissy-en-France, Île-de-France",France
+Dallas/Fort Worth International Airport,DFW/KDFW,"Dallas-Fort Worth, Texas",United States
+Istanbul Atatürk Airport,IST/LTBA,"Yesilköy, Istanbul",Turkey
+Frankfurt Airport,FRA/EDDF,"Frankfurt, Hesse",Germany
+Shanghai Pudong International Airport,PVG/ZSPD,"Pudong, Shanghai",China
+Amsterdam Airport Schiphol,AMS/EHAM,"Haarlemmermeer, North Holland",The Netherlands
+John F. Kennedy International Airport,JFK/KJFK,"Queens, New York",United States
+Singapore Changi Airport,SIN/WSSS,Changi,Singapore
+Guangzhou Baiyun International Airport,CAN/ZGGG,"Baiyun-Huadu, Guangzhou, Guangdong",China
+Soekarno-Hatta International Airport,CGK/WIII,"Tangerang, Banten",Indonesia
+Denver International Airport,DEN/KDEN,"Denver, Colorado",United States
+Suvarnabhumi Airport,BKK/VTBS,"Bang Phli, Samut Prakan",Thailand
+Seoul Incheon International Airport,ICN/RKSI,Incheon,Republic of Korea
+Kuala Lumpur International Airport,KUL/WMKK,"Sepang, Selangor",Malaysia
+Madrid Barajas Airport,MAD/LEMD,"Barajas, Madrid",Spain
+Indira Gandhi International Airport,DEL/VIDP,Delhi,India
+McCarran International Airport,LAS/KLAS,"Las Vegas, Nevada",United States
+Charlotte Douglas International Airport,CLT/KCLT,"Charlotte, North Carolina",United States
+Miami International Airport,MIA/KMIA,"Miami-Dade County, Florida",United States
+Phoenix Sky Harbor International Airport,PHX/KPHX,"Phoenix, Arizona",United States
+George Bush Intercontinental Airport,IAH/KIAH,"Houston, Texas",United States
+Seattle-Tacoma International Airport,SEA/KSEA,"SeaTac, Washington",United States
+Chengdu Shuangliu International Airport,CTU/ZUUU,"Shuangliu-Wuhou, Chengdu, Sichuan",China
+Toronto Pearson International Airport,YYZ/CYYZ,"Mississauga, Ontario",Canada
+Munich Airport,MUC/EDDM,"Freising, Bavaria",Germany
+Chhatrapati Shivaji International Airport,BOM/VABB,"Mumbai, Maharashtra",India
+Leonardo da Vinci–Fiumicino Airport,FCO/LIRF,"Fiumicino, Lazio",Italy
+London Gatwick Airport,LGW/EGKK,"Crawley, West Sussex",United Kingdom
+Sydney Kingsford-Smith Airport,SYD/YSSY,"Mascot, Sydney, New South Wales",Australia
+Barcelona–El Prat Airport,BCN/LEBL,Barcelona,Spain
+São Paulo-Guarulhos International Airport,GRU/SBGR,"Guarulhos, São Paulo",Brazil
+Shanghai Hongqiao International Airport,SHA/ZSSS,"Changning-Minhang, Shanghai",China
+Orlando International Airport,MCO/KMCO,"Orlando, Florida",United States
+Taiwan Taoyuan International Airport,TPE/RCTP,"Dayuan, Taoyuan",Taiwan
+Benito Juárez International Airport,MEX/MMMX,"Venustiano Carranza, Mexico City",Mexico
+Kunming Changshui International Airport,KMG/ZPPP,"Guandu, Kunming, Yunnan",China
+Newark Liberty International Airport,EWR/KEWR,"Newark, New Jersey",United States
+Narita International Airport,NRT/RJAA,"Narita, Chiba",Japan
+Ninoy Aquino International Airport,MNL/RPLL,"Pasay/Parañaque, Metro Manila",Philippines
+Minneapolis/St Paul International Airport,MSP/KMSP,"St. Paul, Minnesota",United States
+Hartsfield–Jackson Atlanta International Airport,ATL/KATL,"Atlanta, Georgia",United States
+Beijing Capital International Airport,PEK/ZBAA,"Chaoyang-Shunyi, Beijing",China
+London Heathrow Airport,LHR/EGLL,"Hillingdon, London",United Kingdom
+Tokyo Haneda Airport,HND/RJTT,"Ota, Tokyo",Japan
+Los Angeles International Airport,LAX/KLAX,"Los Angeles, California",United States
+Dubai International Airport,DXB/OMDB,"Garhoud, Dubai",United Arab Emirates
+O'Hare International Airport,ORD/KORD,"Chicago, Illinois",United States
+Paris-Charles de Gaulle Airport,CDG/LFPG,"Roissy-en-France, Île-de-France",France
+Dallas/Fort Worth International Airport,DFW/KDFW,"Dallas-Fort Worth, Texas",United States
+Hong Kong International Airport,HKG/VHHH,"Chek Lap Kok, Hong Kong",China
+Frankfurt Airport,FRA/EDDF,"Frankfurt, Hesse",Germany
+Soekarno-Hatta International Airport,CGK/WIII,"Cengkareng, Banten",Indonesia
+Istanbul Atatürk Airport,IST/LTBA,Istanbul,Turkey
+Amsterdam Airport Schiphol,AMS/EHAM,"Haarlemmermeer, North Holland",The Netherlands
+Guangzhou Baiyun International Airport,CAN/ZGGG,"Baiyun-Huadu, Guangzhou, Guangdong",China
+Singapore Changi Airport,SIN/WSSS,Changi,Singapore
+Denver International Airport,DEN/KDEN,"Denver, Colorado",United States
+John F. Kennedy International Airport,JFK/KJFK,"Queens, New York, New York",United States
+Shanghai Pudong International Airport,PVG/ZSPD,"Pudong, Shanghai",China
+Kuala Lumpur International Airport,KUL/WMKK,"Sepang, Selangor",Malaysia
+Suvarnabhumi Airport,BKK/VTBS,"Bang Phli, Samut Prakan",Thailand
+Seoul Incheon International Airport,ICN/RKSI,Incheon,Republic of Korea
+Charlotte Douglas International Airport,CLT/KCLT,"Charlotte, North Carolina",United States
+McCarran International Airport,LAS/KLAS,"Las Vegas, Nevada",United States
+Phoenix Sky Harbor International Airport,PHX/KPHX,"Phoenix, Arizona",United States
+Madrid Barajas Airport,MAD/LEMD,"Barajas, Madrid",Spain
+George Bush Intercontinental Airport,IAH/KIAH,"Houston, Texas",United States
+Miami International Airport,MIA/KMIA,"Miami-Dade County, Florida",United States
+São Paulo-Guarulhos International Airport,GRU/SBGR,"Guarulhos, São Paulo",Brazil
+Indira Gandhi International Airport,DEL/VIDP,Delhi,India
+Munich Airport,MUC/EDDM,"Freising, Bavaria",Germany
+Sydney Kingsford-Smith Airport,SYD/YSSY,"Mascot, Sydney, New South Wales",Australia
+Toronto Pearson International Airport,YYZ/CYYZ,"Mississauga, Ontario",Canada
+Leonardo da Vinci–Fiumicino Airport,FCO/LIRF,"Fiumicino, Lazio",Italy
+London Gatwick Airport,LGW/EGKK,"Crawley, West Sussex",United Kingdom
+Shanghai Hongqiao International Airport,SHA/ZSSS,"Changning-Minhang, Shanghai",China
+Chengdu Shuangliu International Airport,CTU/ZUUU,"Shuangliu-Wuhou, Chengdu, Sichuan",China
+Barcelona–El Prat Airport,BCN/LEBL,Barcelona,Spain
+Seattle-Tacoma International Airport,SEA/KSEA,"SeaTac, Washington",United States
+Shenzhen Bao'an International Airport,SZX/ZGSZ,"Bao'an, Shenzhen, Guangdong",China
+Taiwan Taoyuan International Airport,TPE/RCTP,"Dayuan, Taoyuan",Taiwan
+Orlando International Airport,MCO/KMCO,"Orlando, Florida",United States
+Newark Liberty International Airport,EWR/KEWR,"Newark, New Jersey",United States
+Narita International Airport,NRT/RJAA,"Narita, Chiba",Japan
+Minneapolis/St Paul International Airport,MSP/KMSP,"St. Paul, Minnesota",United States
+Chhatrapati Shivaji International Airport,BOM/VABB,"Mumbai, Maharashtra",India
+Benito Juárez International Airport,MEX/MMMX,"Venustiano Carranza, Mexico City",Mexico
+Ninoy Aquino International Airport,MNL/RPLL,"Pasay/Parañaque, Metro Manila",Philippines
+Domodedovo International Airport,DME/UUDD,"Domodedovo, Moscow Oblast",Russia
+Hartsfield–Jackson Atlanta International Airport,ATL/KATL,"Atlanta, Georgia",United States
+Beijing Capital International Airport,PEK/ZBAA,"Chaoyang-Shunyi, Beijing",China
+Heathrow Airport,LHR/EGLL,"Hillingdon, London",United Kingdom
+Tokyo Haneda Airport,HND/RJTT,"Ota, Tokyo",Japan
+O'Hare International Airport,ORD/KORD,"Chicago, Illinois",United States
+Los Angeles International Airport,LAX/KLAX,"Los Angeles, California",United States
+Dubai International Airport,DXB/OMDB,"Garhoud, Dubai",United Arab Emirates
+Paris-Charles de Gaulle Airport,CDG/LFPG,"Roissy-en-France, Île-de-France",France
+Dallas/Fort Worth International Airport,DFW/KDFW,"Dallas-Fort Worth, Texas",United States
+Soekarno-Hatta International Airport,CGK/WIII,"Cengkareng, Tangerang, Banten",Indonesia
+Hong Kong International Airport,HKG/VHHH,"Chek Lap Kok, Hong Kong",China
+Frankfurt Airport,FRA/EDDF,"Frankfurt, Hesse",Germany
+Singapore Changi Airport,SIN/WSSS,Changi,Singapore
+Amsterdam Schiphol Airport,AMS/EHAM,"Haarlemmermeer, North Holland",Netherlands
+Denver International Airport,DEN/KDEN,"Denver, Colorado",United States
+Guangzhou Baiyun International Airport,CAN/ZGGG,"Baiyun-Huadu, Guangzhou, Guangdong",China
+Suvarnabhumi Airport,BKK/VTBS,"Bang Phli, Samut Prakan",Thailand
+Atatürk International Airport,IST/LTBA,Istanbul,Turkey
+John F. Kennedy International Airport,JFK/KJFK,"Queens, New York, New York",United States
+Kuala Lumpur International Airport,KUL/WMKK,"Sepang, Selangor",Malaysia
+Shanghai Pudong International Airport,PVG/ZSPD,"Pudong, Shanghai",China
+Charlotte Douglas International Airport,CLT/KCLT,"Charlotte, North Carolina",United States
+McCarran International Airport,LAS/KLAS,"Las Vegas, Nevada",United States
+Seoul Incheon International Airport,ICN/RKSI,Incheon,Republic of Korea
+Miami International Airport,MIA/KMIA,"Miami-Dade County, Florida",United States
+Phoenix Sky Harbor International Airport,PHX/KPHX,"Phoenix, Arizona",United States
+George Bush Intercontinental Airport,IAH/KIAH,"Houston, Texas",United States
+Madrid Barajas Airport,MAD/LEMD,"Barajas, Madrid",Spain
+Munich Airport,MUC/EDDM,"Freising, Bavaria",Germany
+Sydney Kingsford-Smith Airport,SYD/YSSY,"Sydney, New South Wales",Australia
+Indira Gandhi International Airport,DEL/VIDP,Delhi,India
+São Paulo-Guarulhos International Airport,GRU/SBGR,"Guarulhos, São Paulo",Brazil
+Leonardo da Vinci–Fiumicino Airport,FCO/LIRF,"Fiumicino, Lazio",Italy
+Toronto Pearson International Airport,YYZ/CYYZ,"Mississauga, Ontario",Canada
+Shanghai Hongqiao International Airport,SHA/ZSSS,"Changning-Minhang, Shanghai",China
+London Gatwick Airport,LGW/EGKK,"Crawley, West Sussex",United Kingdom
+Narita International Airport,NRT/RJAA,"Narita, Chiba",Japan
+Barcelona–El Prat Airport,BCN/LEBL,Barcelona,Spain
+Newark Liberty International Airport,EWR/KEWR,"Newark, New Jersey",United States
+Orlando International Airport,MCO/KMCO,"Orlando, Florida",United States
+Seattle-Tacoma International Airport,SEA/KSEA,"SeaTac, Washington",United States
+Minneapolis/St Paul International Airport,MSP/KMSP,"St. Paul, Minnesota",United States
+Chengdu Shuangliu International Airport,CTU/ZUUU,"Shuangliu-Wuhou, Chengdu, Sichuan",China
+Ninoy Aquino International Airport,MNL/RPLL,"Pasay/Parañaque, Metro Manila",Philippines
+Detroit Metropolitan Wayne County Airport,DTW/KDTW,"Detroit, Michigan",United States
+Shenzhen Bao'an International Airport,SZX/ZGSZ,"Bao'an, Shenzhen, Guangdong",China
+Chhatrapati Shivaji International Airport,BOM/VABB,"Mumbai, Maharashtra",India
+Benito Juárez International Airport,MEX/MMMX,"Venustiano Carranza, Mexico City",Mexico
+Domodedovo International Airport,DME/UUDD,"Domodedovo, Moscow Oblast",Russia
+Hartsfield–Jackson Atlanta International Airport,ATL/KATL,"Atlanta, Georgia",United States
+Beijing Capital International Airport,PEK/ZBAA,"Chaoyang-Shunyi, Beijing",China
+London Heathrow Airport,LHR/EGLL,"Hillingdon, London",United Kingdom
+Tokyo International Airport,HND/RJTT,"Ota, Tokyo",Japan
+O'Hare International Airport,ORD/KORD,"Chicago, Illinois",United States
+Los Angeles International Airport,LAX/KLAX,"Los Angeles, California",United States
+Paris-Charles de Gaulle Airport,CDG/LFPG,"Roissy-en-France, Île-de-France",France
+Dallas-Fort Worth International Airport,DFW/KDFW,"Dallas-Fort Worth, Texas",United States
+Soekarno-Hatta International Airport,CGK/WIII,"Cengkareng, Tangerang, Banten",Indonesia
+Dubai International Airport,DXB/OMDB,"Garhoud, Dubai",United Arab Emirates
+Frankfurt Airport,FRA/EDDF,"Frankfurt, Hesse",Germany
+Hong Kong International Airport,HKG/VHHH,"Chek Lap Kok, Hong Kong",China
+Denver International Airport,DEN/KDEN,"Denver, Colorado",United States
+Suvarnabhumi Airport,BKK/VTBS,"Bang Phli, Samut Prakan",Thailand
+Singapore Changi Airport,SIN/WSSS,Changi,Singapore
+Amsterdam Schiphol Airport,AMS/EHAM,"Haarlemmermeer, North Holland",Netherlands
+John F. Kennedy International Airport,JFK/KJFK,"Queens, New York, New York",United States
+Guangzhou Baiyun International Airport,CAN/ZGGG,"Baiyun-Huadu, Guangzhou, Guangdong",China
+Madrid Barajas Airport,MAD/LEMD,"Barajas, Madrid",Spain
+Atatürk International Airport,IST/LTBA,Istanbul,Turkey
+Shanghai Pudong International Airport,PVG/ZSPD,"Pudong, Shanghai",China
+McCarran International Airport,LAS/KLAS,"Las Vegas, Nevada",United States
+Charlotte Douglas International Airport,CLT/KCLT,"Charlotte, North Carolina",United States
+Phoenix Sky Harbor International Airport,PHX/KPHX,"Phoenix, Arizona",United States
+George Bush Intercontinental Airport,IAH/KIAH,"Houston, Texas",United States
+Kuala Lumpur International Airport,KUL/WMKK,"Sepang, Selangor",Malaysia
+Miami International Airport,MIA/KMIA,"Miami-Dade County, Florida",United States
+Seoul Incheon International Airport,ICN/RKSI,Incheon,Republic of Korea
+Munich Airport,MUC/EDDM,"Munich, Bavaria",Germany
+Sydney Airport,SYD/YSSY,"Sydney, New South Wales",Australia
+Leonardo da Vinci-Fiumicino Airport,FCO/LIRF,"Fiumicino, Rome",Italy
+Orlando International Airport,MCO/KMCO,"Orlando, Florida",United States
+Barcelona Airport,BCN/LEBL,"Barcelona, Catalonia",Spain
+Toronto Pearson International Airport,YYZ/CYYZ,"Mississauga, Ontario",Canada
+London Gatwick Airport,LGW/EGKK,"Crawley, West Sussex",United Kingdom
+Indira Gandhi International Airport,DEL/VIDP,Delhi,India
+Newark Liberty International Airport,EWR/KEWR,"Newark, New Jersey",United States
+Shanghai Hongqiao International Airport,SHA/ZSSS,"Changning-Minhang, Shanghai",China
+Seattle-Tacoma International Airport,SEA/KSEA,"SeaTac, Washington",United States
+Minneapolis-Saint Paul International Airport,MSP/KMSP,"Fort Snelling, Minnesota",United States
+Narita International Airport,NRT/RJAA,"Narita, Chiba",Japan
+São Paulo-Guarulhos International Airport,GRU/SBGR,"Guarulhos, São Paulo",Brazil
+Detroit Metropolitan Wayne County Airport,DTW/KDTW,"Detroit, Michigan",United States
+Ninoy Aquino International Airport,MNL/RPLL,"Pasay/Parañaque, Metro Manila",Philippines
+Chengdu Shuangliu International Airport,CTU/ZUUU,"Shuangliu-Wuhou, Chengdu, Sichuan",China
+Philadelphia International Airport,PHL/KPHI,"Philadelphia, Pennsylvania",United States
+Chhatrapati Shivaji International Airport,BOM/VABB,"Mumbai, Maharashtra",India
+Shenzhen Bao'an International Airport,SZX/ZGSZ,"Bao'an, Shenzhen, Guangdong",China
+Tullamarine International Airport,MEL/YMML,"Melbourne, Victoria",Australia
+Hartsfield–Jackson Atlanta International Airport,ATL/KATL,"Atlanta, Georgia",United States
+Beijing Capital International Airport,PEK/ZBAA,"Chaoyang-Shunyi, Beijing",China
+London Heathrow Airport,LHR/EGLL,"Hillingdon, London",United Kingdom
+O'Hare International Airport,ORD/KORD,"Chicago, Illinois",United States
+Tokyo International Airport,HND/RJTT,"Ota, Tokyo",Japan
+Los Angeles International Airport,LAX/KLAX,"Los Angeles, California",United States
+Paris-Charles de Gaulle Airport,CDG/LFPG,"Roissy-en-France, Île-de-France",France
+Dallas-Fort Worth International Airport,DFW/KDFW,"Dallas-Fort Worth, Texas",United States
+Frankfurt Airport,FRA/EDDF,"Frankfurt, Hesse",Germany
+Hong Kong International Airport,HKG/VHHH,"Chek Lap Kok, Hong Kong",China
+Denver International Airport,DEN/KDEN,"Denver, Colorado",United States
+Soekarno-Hatta International Airport,CGK/WIII,"Cengkareng, Jakarta, Java",Indonesia
+Dubai International Airport,DXB/OMDB,"Garhoud, Dubai",United Arab Emirates
+Amsterdam Schiphol Airport,AMS/EHAM,"Haarlemmermeer, North Holland",Netherlands
+Madrid Barajas Airport,MAD/LEMD,"Barajas, Madrid",Spain
+Suvarnabhumi Airport,BKK/VTBS,"Bang Phli, Samut Prakan",Thailand
+John F. Kennedy International Airport,JFK/KJFK,"Queens, New York, New York",United States
+Singapore Changi Airport,SIN/WSSS,Changi,Singapore
+Guangzhou Baiyun International Airport,CAN/ZGGG,"Baiyun-Huadu, Guangzhou, Guangdong",China
+Shanghai Pudong International Airport,PVG/ZSPD,"Pudong, Shanghai",China
+Phoenix Sky Harbor International Airport,PHX/KPHX,"Phoenix, Arizona",United States
+McCarran International Airport,LAS/KLAS,"Las Vegas, Nevada",United States
+George Bush Intercontinental Airport,IAH/KIAH,"Houston, Texas",United States
+Charlotte Douglas International Airport,CLT/KCLT,"Charlotte, North Carolina",United States
+Miami International Airport,MIA/KMIA,"Miami-Dade County, Florida",United States
+Munich Airport,MUC/EDDM,"Munich, Bavaria",Germany
+Kuala Lumpur International Airport,KUL/WMKK,"Sepang, Selangor",Malaysia
+Leonardo da Vinci-Fiumicino Airport,FCO/LIRF,"Fiumicino, Rome",Italy
+Atatürk International Airport,IST/LTBA,Istanbul,Turkey
+Sydney Airport,SYD/YSSY,"Sydney, New South Wales",Australia
+Orlando International Airport,MCO/KMCO,"Orlando, Florida",United States
+Seoul Incheon International Airport,ICN/RKSI,Incheon,Republic of Korea
+Indira Gandhi International Airport,DEL/VIDP,Delhi,India
+Barcelona Airport,BCN/LEBL,"Barcelona, Catalonia",Spain
+London Gatwick Airport,LGW/EGKK,"Crawley, West Sussex, England",United Kingdom
+Newark Liberty International Airport,EWR/KEWR,"Newark, New Jersey",United States
+Toronto Pearson International Airport,YYZ/CYYZ,"Mississauga, Ontario",Canada
+Shanghai Hongqiao International Airport,SHA/ZSSS,"Changning-Minhang, Shanghai",China
+Minneapolis-Saint Paul International Airport,MSP/KMSP,"Fort Snelling, Minnesota",United States
+Seattle-Tacoma International Airport,SEA/KSEA,"SeaTac, Washington",United States
+Detroit Metropolitan Wayne County Airport,DTW/KDTW,"Detroit, Michigan",United States
+Philadelphia International Airport,PHL/KPHI,"Philadelphia, Pennsylvania",United States
+Chhatrapati Shivaji International Airport,BOM/VABB,"Mumbai, Maharashtra",India
+São Paulo-Guarulhos International Airport,GRU/SBGR,"Guarulhos, São Paulo",Brazil
+Ninoy Aquino International Airport,MNL/RPLL,"Pasay/Parañaque, Metro Manila",Philippines
+Chengdu Shuangliu International Airport,CTU/ZUUU,"Shuangliu-Wuhou, Chengdu, Sichuan",China
+Logan International Airport,BOS/KBOS,"Boston, Massachusetts",United States
+Shenzhen Bao'an International Airport,SZX/ZGSZ,"Bao'an, Shenzhen, Guangdong",China
+Melbourne Airport,MEL/YMML,"Melbourne, Victoria",Australia
+Hartsfield–Jackson Atlanta International Airport,ATL/KATL,"Atlanta, Georgia",United States
+Beijing Capital International Airport,PEK/ZBAA,"Chaoyang-Shunyi, Beijing",China
+O'Hare International Airport,ORD/KORD,"Chicago, Illinois",United States
+London Heathrow Airport,LHR/EGLL,"Hillingdon, Greater London, England",United Kingdom
+Tokyo International Airport,HND/RJTT,"Ota, Tokyo",Japan
+Los Angeles International Airport,LAX/KLAX,"Los Angeles, California",United States
+Paris-Charles de Gaulle Airport,CDG/LFPG,"Roissy-en-France, Val d'Oise, Île-de-France",France
+Dallas-Fort Worth International Airport,DFW/KDFW,"Dallas-Fort Worth, Texas",United States
+Frankfurt Airport,FRA/EDDF,"Frankfurt, Hesse",Germany
+Denver International Airport,DEN/KDEN,"Denver, Colorado",United States
+Hong Kong International Airport,HKG/VHHH,"Chek Lap Kok, Hong Kong",China
+Madrid-Barajas Airport,MAD/LEMD,"Barajas, Madrid",Spain
+Dubai International Airport,DXB/OMDB,"Garhoud, Dubai",United Arab Emirates
+John F. Kennedy International Airport,JFK/KJFK,"Queens, New York, New York",United States
+Amsterdam Airport Schiphol,AMS/EHAM,"Haarlemmermeer, North Holland",Netherlands
+Soekarno-Hatta International Airport,CGK/WIII,"Cengkareng, Jakarta, Java",Indonesia
+Suvarnabhumi Airport,BKK/VTBS,"Bang Phli, Samut Prakan",Thailand
+Singapore Changi Airport,SIN/WSSS,Changi,Singapore
+Guangzhou Baiyun International Airport,CAN/ZGGG,"Baiyun-Huadu, Guangzhou, Guangdong",China
+Shanghai Pudong International Airport,PVG/ZSPD,"Pudong, Shanghai",China
+George Bush Intercontinental Airport,IAH/KIAH,"Houston, Texas",United States
+McCarran International Airport,LAS/KLAS,"Las Vegas, Nevada",United States
+Phoenix Sky Harbor International Airport,PHX/KPHX,"Phoenix, Arizona",United States
+Charlotte Douglas International Airport,CLT/KCLT,"Charlotte, North Carolina",United States
+Leonardo da Vinci Airport,FCO/LIRF,"Fiumicino, Rome",Italy
+Sydney Airport,SYD/YSSY,"Sydney, New South Wales",Australia
+Miami International Airport,MIA/KMIA,"Miami-Dade County, Florida",United States
+Orlando International Airport,MCO/KMCO,"Orlando, Florida",United States
+Munich Airport,MUC/EDDM,"Munich, Bavaria",Germany
+Kuala Lumpur International Airport,KUL/WMKK,"Sepang, Selangor",Malaysia
+Narita International Airport,NRT/RJAA,"Narita, Chiba",Japan
+Seoul Incheon International Airport,ICN/RKSI,Incheon,Republic of Korea
+Newark Liberty International Airport,EWR/KEWR,"Newark, New Jersey",United States
+Minneapolis-Saint Paul International Airport,MSP/KMSP,"Fort Snelling, Minnesota",United States
+Detroit Metropolitan Wayne County Airport,DTW/KDTW,"Detroit, Michigan",United States
+Atatürk International Airport,IST/LTBA,"Yesilköy, Istanbul",Turkey
+Toronto Pearson International Airport,YYZ/CYYZ,"Mississauga, Ontario",Canada
+Seattle-Tacoma International Airport,SEA/KSEA,"SeaTac, Washington",United States
+London Gatwick Airport,LGW/EGKK,"Crawley, West Sussex, England",United Kingdom
+Shanghai Hongqiao International Airport,SHA/ZSSS,"Changning-Minhang, Shanghai",China
+Philadelphia International Airport,PHL/KPHI,"Philadelphia, Pennsylvania",United States
+Barcelona Airport,BCN/LEBL,"Barcelona, Catalonia",Spain
+Indira Gandhi International Airport,DEL/VIDP,Delhi,India
+Chhatrapati Shivaji International Airport,BOM/VABB,"Mumbai, Maharashtra",India
+Melbourne Airport,MEL/YMML,"Melbourne, Victoria",Australia
+São Paulo-Guarulhos International Airport,GRU/SBGR,"Guarulhos, São Paulo",Brazil
+Logan International Airport,BOS/KBOS,"Boston, Massachusetts",United States
+Ninoy Aquino International Airport,MNL/RPLL,"Pasay/Parañaque, Metro Manila",Philippines
+Shenzhen Bao'an International Airport,SZX/ZGSZ,"Bao'an, Shenzhen, Guangdong",China
+Vancouver International Airport,YVR/ZGSZ,"Vancouver",Canada
+LaGuardia Airport,LGA/ZGSZ,"Queens",United States
+Ronald Reagan Washington National Airport,DCA/ZGSZ,"Arlington",United States
+Portland International Airport,PDX/ZGSZ,"Portland",United States
+Dulles International Airport,IAD/ZGSZ,"Dulles",United States
