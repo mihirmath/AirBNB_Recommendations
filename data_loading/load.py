@@ -12,14 +12,17 @@ amadeus = Client(
 response = amadeus.shopping.flight_offers_search.get(
             originLocationCode='SFO',
             destinationLocationCode='DEL',
-            departureDate='2021-08-10',
+            departureDate='2021-08-09',
             adults='1')
 
+<<<<<<< HEAD
 #Cloud Database
 #url = "neo4j+s://e54715b3.databases.neo4j.io:7687"
 #driver = GraphDatabase.driver(url, auth=("neo4j", "d6xX8PrwU_0UMPhqAy76MMMiuAtzJqF6_djE3TnliO0"))
 
 #Local Database
+=======
+>>>>>>> parent of 5aa6f9f (Update load.py)
 url = "bolt://localhost:7687"
 driver = GraphDatabase.driver(url, auth=("neo4j", "neo4j123"))
 
