@@ -12,17 +12,9 @@ amadeus = Client(
 response = amadeus.shopping.flight_offers_search.get(
             originLocationCode='SFO',
             destinationLocationCode='DEL',
-            departureDate='2021-08-09',
+            departureDate='2021-08-11',
             adults='1')
 
-<<<<<<< HEAD
-#Cloud Database
-#url = "neo4j+s://e54715b3.databases.neo4j.io:7687"
-#driver = GraphDatabase.driver(url, auth=("neo4j", "d6xX8PrwU_0UMPhqAy76MMMiuAtzJqF6_djE3TnliO0"))
-
-#Local Database
-=======
->>>>>>> parent of 5aa6f9f (Update load.py)
 url = "bolt://localhost:7687"
 driver = GraphDatabase.driver(url, auth=("neo4j", "neo4j123"))
 
@@ -47,7 +39,7 @@ def parseDuration(duration):
 #Neo4j Python Driver
 def merge_flight_node(tx, id, flightNumber, oneWay, grandTotal, duration, departure_iataCode, departure_airportName, 
                       arrival_iataCode, arrival_airportName, departure_cityName, arrival_cityName, departure_countryName, 
-                      arrival_countryName, carrierCode, airlineName, departureTime, arrivalTime, nextFlightID):
+                      arrival_countryName, carrierCode, airlineName, departureTime, arrivalTime):
     #Query
     tx.run('MERGE (Flight:Flight {id: $id, flightNumber: $flightNumber, oneWay: $oneWay, grandTotal: $grandTotal, duration: $duration})'
            'MERGE (departureAirport:Airport {iataCode: $departure_iataCode, name: $departure_airportName})'
@@ -63,9 +55,7 @@ def merge_flight_node(tx, id, flightNumber, oneWay, grandTotal, duration, depart
            'MERGE (arrivalAirport)-[:IN_CITY]->(arrivalCity)'
            'MERGE (departureCity)-[:IN_COUNTRY]->(departureCountry)'
            'MERGE (arrivalCity)-[:IN_COUNTRY]->(arrivalCountry)'
-           'MERGE (Flight)-[:HAS_AIRLINE]->(Airline)'
-           #'MATCH (n:Flight) WHERE n.id = $nextFlightID'
-           'MERGE (Flight)-[:NEXT_FLIGHT]->(n:Flight) ON MATCH SET n.id = $nextFlightID', 
+           'MERGE (Flight)-[:HAS_AIRLINE]->(Airline)', 
                                                 id=id, 
                                                 flightNumber=flightNumber,
                                                 oneWay=oneWay,
@@ -82,8 +72,7 @@ def merge_flight_node(tx, id, flightNumber, oneWay, grandTotal, duration, depart
                                                 carrierCode=carrierCode,
                                                 airlineName=airlineName,
                                                 departureTime=departureTime,
-                                                arrivalTime=arrivalTime,
-                                                nextFlightID=nextFlightID)
+                                                arrivalTime=arrivalTime)
 #Open airport csv file
 with open ('data_loading/airports.csv') as iataFile:
     reader = csv.DictReader(iataFile)
@@ -118,10 +107,10 @@ for a, flight in enumerate(response.data):
         for ii, segment in enumerate(itinerary['segments']):
             id = int(segment['id'])
             flightNumber = segment['carrierCode'] + segment['number']
-            if ii > 0:
-                nextFlightID = id
-            else:
-                nextFlightID = 1000000
+            #if ii > 0:
+            #    nextFlightID = id
+            #else:
+            #    nextFlightID = 1000000
             duration = parseDuration(segment['duration'])
             departure_iataCode = segment['departure']['iataCode']
             departureTime = segment['departure']['at']
@@ -148,6 +137,6 @@ for a, flight in enumerate(response.data):
                                                    departure_iataCode, departure_airportName, arrival_iataCode, 
                                                    arrival_airportName, departure_cityName, arrival_cityName, 
                                                    departure_countryName, arrival_countryName, carrierCode, airlineName, 
-                                                   departureTime, arrivalTime, nextFlightID)
+                                                   departureTime, arrivalTime)
 #Closes the Neo4j Python Driver
 driver.close()
