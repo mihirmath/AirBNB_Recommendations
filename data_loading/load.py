@@ -9,10 +9,10 @@ amadeus = Client(
     client_secret='gh0etd0dSTnZ7AVG'
 )
 #Gather API Data based on Given Parameters
-response = amadeus.shopping.flight_offers_search.get(
+flightResponse = amadeus.shopping.flight_offers_search.get(
             originLocationCode='SFO',
             destinationLocationCode='DEL',
-            departureDate='2021-08-11',
+            departureDate='2021-08-12',
             adults='1')
 
 url = "bolt://localhost:7687"
@@ -56,23 +56,23 @@ def merge_flight_node(tx, id, flightNumber, oneWay, grandTotal, duration, depart
            'MERGE (departureCity)-[:IN_COUNTRY]->(departureCountry)'
            'MERGE (arrivalCity)-[:IN_COUNTRY]->(arrivalCountry)'
            'MERGE (Flight)-[:HAS_AIRLINE]->(Airline)', 
-                                                id=id, 
-                                                flightNumber=flightNumber,
-                                                oneWay=oneWay,
-                                                grandTotal=grandTotal,
-                                                duration=duration,
-                                                departure_iataCode=departure_iataCode,
-                                                departure_airportName=departure_airportName,
-                                                arrival_iataCode=arrival_iataCode,
-                                                arrival_airportName=arrival_airportName,
-                                                departure_cityName=departure_cityName,
-                                                arrival_cityName=arrival_cityName,
-                                                departure_countryName=departure_countryName,
-                                                arrival_countryName=arrival_countryName,
-                                                carrierCode=carrierCode,
-                                                airlineName=airlineName,
-                                                departureTime=departureTime,
-                                                arrivalTime=arrivalTime)
+                                                    id=id, 
+                                                    flightNumber=flightNumber,
+                                                    oneWay=oneWay,
+                                                    grandTotal=grandTotal,
+                                                    duration=duration,
+                                                    departure_iataCode=departure_iataCode,
+                                                    departure_airportName=departure_airportName,
+                                                    arrival_iataCode=arrival_iataCode,
+                                                    arrival_airportName=arrival_airportName,
+                                                    departure_cityName=departure_cityName,
+                                                    arrival_cityName=arrival_cityName,
+                                                    departure_countryName=departure_countryName,
+                                                    arrival_countryName=arrival_countryName,
+                                                    carrierCode=carrierCode,
+                                                    airlineName=airlineName,
+                                                    departureTime=departureTime,
+                                                    arrivalTime=arrivalTime)
 #Open airport csv file
 with open ('data_loading/airports.csv') as iataFile:
     reader = csv.DictReader(iataFile)
@@ -98,19 +98,19 @@ with open ('data_loading/airlines.csv') as airlineFile:
             "name": row['Name']
         })
 #Loops through all flight trips
-for a, flight in enumerate(response.data):
+for a, flight in enumerate(flightResponse.data):
     oneWay = flight['oneWay']   
     grandTotal = usd(flight['price']['grandTotal'])
+    pathIDList = []
     #Loops through all flight itineraries
     for i, itinerary in enumerate(flight['itineraries']):
         #Loops through all flight segments
         for ii, segment in enumerate(itinerary['segments']):
             id = int(segment['id'])
+            pathIDList.append(id)
+            if ii != len(itinerary['segments']) - 1:
+                nextflightID = id + 1
             flightNumber = segment['carrierCode'] + segment['number']
-            #if ii > 0:
-            #    nextFlightID = id
-            #else:
-            #    nextFlightID = 1000000
             duration = parseDuration(segment['duration'])
             departure_iataCode = segment['departure']['iataCode']
             departureTime = segment['departure']['at']
@@ -131,12 +131,15 @@ for a, flight in enumerate(response.data):
                     arrival_airportName = airport['name']
                     arrival_cityName = airport['city']
                     arrival_countryName = airport['country']
-            with driver.session() as session:
+            #with driver.session() as session:
                 #Runs Query
-                result = session.write_transaction(merge_flight_node, id, flightNumber, oneWay, grandTotal, duration,
-                                                   departure_iataCode, departure_airportName, arrival_iataCode, 
-                                                   arrival_airportName, departure_cityName, arrival_cityName, 
-                                                   departure_countryName, arrival_countryName, carrierCode, airlineName, 
-                                                   departureTime, arrivalTime)
+                #result = session.write_transaction(merge_flight_node, id, flightNumber, oneWay, grandTotal, duration,
+                                                   #departure_iataCode, departure_airportName, arrival_iataCode, 
+                                                   #arrival_airportName, departure_cityName, arrival_cityName, 
+                                                   #departure_countryName, arrival_countryName, carrierCode, airlineName, 
+                                                   #departureTime, arrivalTime)
+    print(pathIDList)
 #Closes the Neo4j Python Driver
 driver.close()
+
+#If not the last segment next flight ID = next flight ID + 1
