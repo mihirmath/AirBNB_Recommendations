@@ -11,8 +11,8 @@ amadeus = Client(
 #Gather API Data based on Given Parameters
 flightResponse = amadeus.shopping.flight_offers_search.get(
             originLocationCode='SFO',
-            destinationLocationCode='DEL',
-            departureDate='2021-08-13',
+            destinationLocationCode='BOS',
+            departureDate='2021-10-01',
             adults='1')
 
 #Local DB
@@ -46,7 +46,8 @@ def merge_flight_node1(tx, id, flightNumber, oneWay, grandTotal, duration, depar
                       arrival_iataCode, arrival_airportName, departure_cityName, arrival_cityName, departure_countryName, 
                       arrival_countryName, carrierCode, airlineName, departureTime, arrivalTime):
     #Query
-    tx.run('MERGE (f:Flight {id: $id, flightNumber: $flightNumber, oneWay: $oneWay, grandTotal: $grandTotal, duration: $duration})'
+    tx.run('MERGE (f:Flight {flightNumber: $flightNumber, duration: $duration, grandTotal: $grandTotal})'
+           'SET f.id=$id, f.oneWay=$oneWay '
            'MERGE (departureAirport:Airport {iataCode: $departure_iataCode, name: $departure_airportName})'
            'MERGE (arrivalAirport:Airport {iataCode: $arrival_iataCode, name: $arrival_airportName})'
            'MERGE (departureCity:City {name: $departure_cityName})'
@@ -82,9 +83,10 @@ def merge_flight_node2(tx, id, flightNumber, oneWay, grandTotal, duration, depar
                       arrival_iataCode, arrival_airportName, departure_cityName, arrival_cityName, departure_countryName, 
                       arrival_countryName, carrierCode, airlineName, departureTime, arrivalTime, originFlightID):
     #Query
-    tx.run('MERGE (f:Flight {id: $id, flightNumber: $flightNumber, oneWay: $oneWay, grandTotal: $grandTotal, duration: $duration})'
+    tx.run('MERGE (f:Flight {flightNumber: $flightNumber, duration:$duration})'
+           'SET f.id=$id, f.oneWay=$oneWay, f.grandTotal=$grandTotal '
+           'MERGE (arrivalAirport:Airport {iataCode: $arrival_iataCode, name: $arrival_airportName}) '
            'MERGE (departureAirport:Airport {iataCode: $departure_iataCode, name: $departure_airportName})'
-           'MERGE (arrivalAirport:Airport {iataCode: $arrival_iataCode, name: $arrival_airportName})'
            'MERGE (departureCity:City {name: $departure_cityName})'
            'MERGE (arrivalCity:City {name: $arrival_cityName})'
            'MERGE (departureCountry:Country {name: $departure_countryName})'
