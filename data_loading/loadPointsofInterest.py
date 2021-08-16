@@ -21,6 +21,10 @@ interestResponse = amadeus.reference_data.locations.points_of_interest.get(
 url = "neo4j+s://e54715b3.databases.neo4j.io:7687"
 driver = GraphDatabase.driver(url, auth=("neo4j", "d6xX8PrwU_0UMPhqAy76MMMiuAtzJqF6_djE3TnliO0"))
 
+def usd(amount):
+    usd_amount = float(amount) * 1.18
+    return round(usd_amount, 2)
+
 def merge_pointOfInterest_node(tx, id, name, rank, tag, category, coordinates, city):
     #Query
     tx.run('MERGE (poi:`Point of Interest` {id: $id})'
