@@ -195,7 +195,3 @@ for a, flight in enumerate(flightResponse.data):
                                                     departureTime, arrivalTime)
 #Closes the Neo4j Python Driver
 driver.close()
-
-#If not the last segment next flight ID = next flight ID + 1
-#USE: Current Flight ID - 1 to find original flight <-- Doesn't apply to first segment
-#Idea: have different drivers for if it is the first flight or not because if it is a first flight then it wont have an origin

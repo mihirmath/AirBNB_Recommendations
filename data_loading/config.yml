@@ -1,6 +1,6 @@
-server_uri: bolt://localhost:7687/
+server_uri: neo4j+s://e54715b3.databases.neo4j.io:7687
 admin_user: neo4j
-admin_pass: test
+admin_pass: d6xX8PrwU_0UMPhqAy76MMMiuAtzJqF6_djE3TnliO0
 
 files:
 
