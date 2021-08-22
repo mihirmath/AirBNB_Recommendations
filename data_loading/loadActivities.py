@@ -18,12 +18,12 @@ def usd(amount):
     return round(usd_amount, 2)
 
 #Local DB
-url = "bolt://localhost:7687"
-driver = GraphDatabase.driver(url, auth=("neo4j", "neo4j123"))
+#url = "bolt://localhost:7687"
+#driver = GraphDatabase.driver(url, auth=("neo4j", "neo4j123"))
 
 #Cloud DB
-#url = "neo4j+s://e54715b3.databases.neo4j.io:7687"
-#driver = GraphDatabase.driver(url, auth=("neo4j", "d6xX8PrwU_0UMPhqAy76MMMiuAtzJqF6_djE3TnliO0"))
+url = "neo4j+s://e54715b3.databases.neo4j.io:7687"
+driver = GraphDatabase.driver(url, auth=("neo4j", "d6xX8PrwU_0UMPhqAy76MMMiuAtzJqF6_djE3TnliO0"))
 
 def merge_activity_node(tx, id, name, description, price, rating, bookingLink, pictureURL, coordinates, city):
     #Query
