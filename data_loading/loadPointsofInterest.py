@@ -35,7 +35,7 @@ def merge_pointOfInterest_node(tx, id, name, rank, tag, category, coordinates, c
            'MERGE (city:City {name: $city})'
            'MERGE (poi)-[:IN_CATEGORY]->(category)'
            'MERGE (poi)-[:HAS_TAG]->(tag)'
-           'MERGE (poi)-[:HAS_Location]->(coordinates)'
+           'MERGE (poi)-[:HAS_LOCATION]->(coordinates)'
            'MERGE (coordinates)-[:IN_CITY]->(city)', id=id, name=name, rank=rank, tag=tag, category=category, 
                                                      coordinates=coordinates, city=city)
 for i in range(len(interestResponse.data)):

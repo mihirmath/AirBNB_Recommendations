@@ -26,18 +26,32 @@ response = covid_res.json()['data']
 url = "neo4j+s://e54715b3.databases.neo4j.io:7687"
 driver = GraphDatabase.driver(url, auth=("neo4j", "d6xX8PrwU_0UMPhqAy76MMMiuAtzJqF6_djE3TnliO0"))
 
-def merge_covid_node(tx, countryName, areaPolicyStatus, covidInfectionRate, maskIsRequired, entryRestrictionBan, covidInfectionLevel):
+def merge_covid_node(tx, countryName, areaPolicyStatus, covidInfectionRate, maskIsRequired, entryRestrictionBan, 
+                         covidInfectionLevel, exitRestrictionBan, quarantineDuration, quarantineEligiblePerson,
+                         infectionLevelDate, quarantineRestrictionDate):
     #Query
     tx.run('MERGE (country:Country {name:$countryName})'
            'SET country.areaPolicyStatus=$areaPolicyStatus, country.covidInfectionRate=$covidInfectionRate, country.maskIsRequired=$maskIsRequired, country.entryRestriction=$entryRestrictionBan '
-           'MERGE (covidInfectionLevel:`Covid Infection Level` {level: $covidInfectionLevel})'
-           'MERGE (country)-[:HAS_INFECTION_LEVEL]->(covidInfectionLevel)',
+           'MERGE (covidInfLev:`Covid Infection Level` {level: $covidInfectionLevel})'
+           'MERGE (exitRest:`Exit Restriction` {isBanned: $exitRestrictionBan})'
+           'MERGE (quarantineRest:`Quarantine Restriction`)'
+           'SET quarantineRest.duration=$quarantineDuration, quarantineRest.eligiblePerson=$quarantineEligiblePerson '
+           'MERGE (country)-[hasInf:HAS_INFECTION_LEVEL]->(covidInfLev)'
+           'SET hasInf.date=$infectionLevelDate '
+           'MERGE (country)-[:HAS_EXIT_RESTRICTION]->(exitRest)'
+           'MERGE (country)-[hasQuar:HAS_QUARANTINE_RESTRICTION]->(quarantineRest)'
+           'SET hasQuar.date=$quarantineRestrictionDate ',
                                                                                      countryName=countryName,
                                                                                      areaPolicyStatus=areaPolicyStatus,
                                                                                      covidInfectionRate=covidInfectionRate, 
                                                                                      maskIsRequired=maskIsRequired,
                                                                                      entryRestrictionBan=entryRestrictionBan,
-                                                                                     covidInfectionLevel=covidInfectionLevel)
+                                                                                     covidInfectionLevel=covidInfectionLevel,
+                                                                                     exitRestrictionBan=exitRestrictionBan,
+                                                                                     quarantineDuration=quarantineDuration,
+                                                                                     quarantineEligiblePerson=quarantineEligiblePerson,
+                                                                                     infectionLevelDate=infectionLevelDate,
+                                                                                     quarantineRestrictionDate=quarantineRestrictionDate)
 
 if response['area']['areaType'] == 'Country':
     countryName = response['area']['name']
@@ -48,10 +62,22 @@ maskIsRequired = response['areaAccessRestriction']['mask']['isRequired']
 entryRestrictionBan = response['areaAccessRestriction']['entry']['ban']
 areaPolicyStatus = response['areaPolicy']['status']
 exitRestrictionBan = response['areaAccessRestriction']['exit']['isBanned']
+quarantineEligiblePerson = response['areaAccessRestriction']['quarantineModality']['eligiblePerson']
+if quarantineEligiblePerson == 'None':
+  quarantineDuration = 0
+else:
+  quarantineDuration = response['areaAccessRestriction']['quarantineModality']['duration']
+infectionLevelDate = response['diseaseInfection']['date']
+quarantineRestrictionDate = response['areaAccessRestriction']['quarantineModality']['date']
 with driver.session() as session:
     result = session.write_transaction(merge_covid_node, countryName=countryName, 
                                                          areaPolicyStatus=areaPolicyStatus,
                                                          covidInfectionRate=covidInfectionRate, 
                                                          maskIsRequired=maskIsRequired,
                                                          entryRestrictionBan=entryRestrictionBan, 
-                                                         covidInfectionLevel=covidInfectionLevel)
+                                                         covidInfectionLevel=covidInfectionLevel,
+                                                         exitRestrictionBan=exitRestrictionBan,
+                                                         quarantineDuration=quarantineDuration,
+                                                         quarantineEligiblePerson=quarantineEligiblePerson,
+                                                         quarantineRestrictionDate=quarantineRestrictionDate,
+                                                         infectionLevelDate=infectionLevelDate)
