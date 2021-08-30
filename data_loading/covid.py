@@ -26,9 +26,14 @@ response = covid_res.json()['data']
 url = "neo4j+s://e54715b3.databases.neo4j.io:7687"
 driver = GraphDatabase.driver(url, auth=("neo4j", "d6xX8PrwU_0UMPhqAy76MMMiuAtzJqF6_djE3TnliO0"))
 
+def parseDelay(delay):
+    delay_hr = int(delay.replace('P', '').split('H')[0])
+    return delay_hr
+
 def merge_covid_node(tx, countryName, areaPolicyStatus, covidInfectionRate, maskIsRequired, entryRestrictionBan, 
-                         covidInfectionLevel, exitRestrictionBan, quarantineDuration, quarantineEligiblePerson,
-                         infectionLevelDate, quarantineRestrictionDate):
+                         covidInfectionLevel, exitRestrictionBan, quarantineDuration, quarantineEligiblePerson, 
+                         testingMinAge, testingRequirement, testType, testWhen, validityPeriodDelay, 
+                         validityPeriodReferenceDateType, infectionLevelDate, quarantineRestrictionDate, testingDate):
     #Query
     tx.run('MERGE (country:Country {name:$countryName})'
            'SET country.areaPolicyStatus=$areaPolicyStatus, country.covidInfectionRate=$covidInfectionRate, country.maskIsRequired=$maskIsRequired, country.entryRestriction=$entryRestrictionBan '
@@ -36,11 +41,18 @@ def merge_covid_node(tx, countryName, areaPolicyStatus, covidInfectionRate, mask
            'MERGE (exitRest:`Exit Restriction` {isBanned: $exitRestrictionBan})'
            'MERGE (quarantineRest:`Quarantine Restriction`)'
            'SET quarantineRest.duration=$quarantineDuration, quarantineRest.eligiblePerson=$quarantineEligiblePerson '
+           'MERGE (diseaseTest:`Disease Testing`)'
+           'SET diseaseTest.minAge=$testingMinAge, diseaseTest.requirement=$testingRequirement, diseaseTest.testType=$testType, diseaseTest.when=$testWhen '
+           'MERGE (valPer:`Validity Period`)'
+           'SET valPer.delay=$validityPeriodDelay, valPer.referenceDateType=$validityPeriodReferenceDateType '
            'MERGE (country)-[hasInf:HAS_INFECTION_LEVEL]->(covidInfLev)'
            'SET hasInf.date=$infectionLevelDate '
            'MERGE (country)-[:HAS_EXIT_RESTRICTION]->(exitRest)'
            'MERGE (country)-[hasQuar:HAS_QUARANTINE_RESTRICTION]->(quarantineRest)'
-           'SET hasQuar.date=$quarantineRestrictionDate ',
+           'SET hasQuar.date=$quarantineRestrictionDate '
+           'MERGE (country)-[hasDiseaseTest:HAS_DISEASE_TESTING]->(diseaseTest)'
+           'SET hasDiseaseTest.date=$testingDate '
+           'MERGE (diseaseTest)-[:HAS_VALIDITY_PERIOD]->(valPer)',
                                                                                      countryName=countryName,
                                                                                      areaPolicyStatus=areaPolicyStatus,
                                                                                      covidInfectionRate=covidInfectionRate, 
@@ -50,8 +62,15 @@ def merge_covid_node(tx, countryName, areaPolicyStatus, covidInfectionRate, mask
                                                                                      exitRestrictionBan=exitRestrictionBan,
                                                                                      quarantineDuration=quarantineDuration,
                                                                                      quarantineEligiblePerson=quarantineEligiblePerson,
+                                                                                     testingMinAge=testingMinAge,
+                                                                                     testingRequirement=testingRequirement,
+                                                                                     testType=testType,
+                                                                                     testWhen=testWhen,
+                                                                                     validityPeriodDelay=validityPeriodDelay,
+                                                                                     validityPeriodReferenceDateType=validityPeriodReferenceDateType,
                                                                                      infectionLevelDate=infectionLevelDate,
-                                                                                     quarantineRestrictionDate=quarantineRestrictionDate)
+                                                                                     quarantineRestrictionDate=quarantineRestrictionDate,
+                                                                                     testingDate=testingDate)
 
 if response['area']['areaType'] == 'Country':
     countryName = response['area']['name']
@@ -69,15 +88,30 @@ else:
   quarantineDuration = response['areaAccessRestriction']['quarantineModality']['duration']
 infectionLevelDate = response['diseaseInfection']['date']
 quarantineRestrictionDate = response['areaAccessRestriction']['quarantineModality']['date']
+testingMinAge = response['areaAccessRestriction']['diseaseTesting']['minimumAge']
+testingRequirement = response['areaAccessRestriction']['diseaseTesting']['requirement']
+testType = response['areaAccessRestriction']['diseaseTesting']['testType']
+testWhen = response['areaAccessRestriction']['diseaseTesting']['when']
+testingDate = response['areaAccessRestriction']['diseaseTesting']['date']
+validityPeriodDelay = parseDelay(response['areaAccessRestriction']['diseaseTesting']['validityPeriod']['delay'])
+validityPeriodReferenceDateType = response['areaAccessRestriction']['diseaseTesting']['validityPeriod']['referenceDateType']
+
 with driver.session() as session:
-    result = session.write_transaction(merge_covid_node, countryName=countryName, 
+    result = session.write_transaction(merge_covid_node, countryName=countryName,
                                                          areaPolicyStatus=areaPolicyStatus,
                                                          covidInfectionRate=covidInfectionRate, 
                                                          maskIsRequired=maskIsRequired,
-                                                         entryRestrictionBan=entryRestrictionBan, 
+                                                         entryRestrictionBan=entryRestrictionBan,
                                                          covidInfectionLevel=covidInfectionLevel,
                                                          exitRestrictionBan=exitRestrictionBan,
                                                          quarantineDuration=quarantineDuration,
                                                          quarantineEligiblePerson=quarantineEligiblePerson,
+                                                         testingMinAge=testingMinAge,
+                                                         testingRequirement=testingRequirement,
+                                                         testType=testType,
+                                                         testWhen=testWhen,
+                                                         validityPeriodDelay=validityPeriodDelay,
+                                                         validityPeriodReferenceDateType=validityPeriodReferenceDateType,
+                                                         infectionLevelDate=infectionLevelDate,
                                                          quarantineRestrictionDate=quarantineRestrictionDate,
-                                                         infectionLevelDate=infectionLevelDate)
+                                                         testingDate=testingDate)
