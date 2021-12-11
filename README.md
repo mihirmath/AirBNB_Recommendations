@@ -9,3 +9,4 @@ The purpose of this project is to create covid-complying travel recommendations 
 
 A secondary purpose of this project is to show a use case for the Neo4j graph database technology. Travel data lends itself well to a graph database because the data is very connected. Before gathering and loading data into the database, I created a schema to visualize the connections between the data:
 
+<img width="1447" alt="Screen Shot 2021-12-10 at 7 43 29 PM" src="https://user-images.githubusercontent.com/64558607/145663041-9e6a83e4-2abc-4ccf-add4-6059a52e963d.png">
