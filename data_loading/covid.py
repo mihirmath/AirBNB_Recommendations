@@ -30,6 +30,11 @@ def parseDelay(delay):
     delay_hr = int(delay.replace('P', '').split('H')[0])
     return delay_hr
 
+def changeCountryName(countryName):
+    if(countryName != 'United States'):
+      countryName = 'United States'
+    return countryName
+
 def merge_covid_node(tx, countryName, areaPolicyStatus, covidInfectionRate, maskIsRequired, entryRestrictionBan, 
                          covidInfectionLevel, exitRestrictionBan, quarantineDuration, quarantineEligiblePerson, 
                          testingMinAge, testingRequirement, testType, testWhen, validityPeriodDelay, 
@@ -73,7 +78,7 @@ def merge_covid_node(tx, countryName, areaPolicyStatus, covidInfectionRate, mask
                                                                                      testingDate=testingDate)
 
 if response['area']['areaType'] == 'Country':
-    countryName = response['area']['name']
+    countryName = changeCountryName(response['area']['name'])
 covidInfectionRate = response['diseaseInfection']['rate']
 covidInfectionLevel = response['diseaseInfection']['level']
 covidInfectionDate = response['diseaseInfection']['date']

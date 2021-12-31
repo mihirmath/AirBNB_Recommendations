@@ -2,8 +2,8 @@ from amadeus import Client
 from neo4j import GraphDatabase
 from geopy.geocoders import Nominatim
 
-lat = 37.7749
-long = -122.4194
+lat = 40.7128
+long = -74.0060
 
 amadeus = Client(
     client_id='MODEiG7lXARU6ZVBI5SeGUgbKLXq5UBe',

@@ -12,7 +12,7 @@ amadeus = Client(
 flightResponse = amadeus.shopping.flight_offers_search.get(
             originLocationCode='SFO',
             destinationLocationCode='BOS',
-            departureDate='2021-10-01',
+            departureDate='2022-01-01',
             adults='1')
 
 #Local DB
@@ -41,6 +41,17 @@ def parseDuration(duration):
     else:
         duration = duration_hr * 60
     return duration
+
+def changeDeptCity(departure_cityName):
+    if (departure_cityName == 'Queens'):
+        departure_cityName = 'New York'
+    return departure_cityName
+
+def changeArrCity(arrival_cityName):
+    if (arrival_cityName == 'Queens'):
+        arrival_cityName = 'New York'
+    return arrival_cityName
+
 #Neo4j Python Driver
 def merge_flight_node1(tx, id, flightNumber, oneWay, grandTotal, duration, departure_iataCode, departure_airportName, 
                       arrival_iataCode, arrival_airportName, departure_cityName, arrival_cityName, departure_countryName, 
@@ -170,11 +181,11 @@ for a, flight in enumerate(flightResponse.data):
             for airport in airports:
                 if departure_iataCode in airport['iataCode']:
                     departure_airportName = airport['name']
-                    departure_cityName = airport['city']
+                    departure_cityName = changeDeptCity(airport['city'])
                     departure_countryName = airport['country']
                 elif arrival_iataCode in airport['iataCode']:
                     arrival_airportName = airport['name']
-                    arrival_cityName = airport['city']
+                    arrival_cityName = changeArrCity(airport['city'])
                     arrival_countryName = airport['country']
             if ii != 0: #If it is not the first segment
                 originFlightID = id - 1
